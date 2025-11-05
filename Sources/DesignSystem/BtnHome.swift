@@ -15,12 +15,14 @@ public struct BtnHome<Destination: View>: View {
     var text: String
     var image: String
     var backgroundColor: Color
+    var color: Color
     
-    public init(destination: Destination, text: String, image: String, backgroundColor: Color) {
+    public init(destination: Destination, text: String, image: String, backgroundColor: Color, color: Color) {
         self.destination = destination
         self.text = text
         self.image = image
         self.backgroundColor = backgroundColor
+        self.color = color
     }
     
     public var body: some View {
@@ -34,8 +36,9 @@ public struct BtnHome<Destination: View>: View {
                         .frame(width: 32, height: 32)
                         .foregroundColor(.white)
                     Text(text)
+                        .foregroundStyle(color)
                 }
-                .padding(40)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 3 - 110)
                 .background(backgroundColor)
                 .cornerRadius(12)
             }
