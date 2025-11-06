@@ -35,7 +35,7 @@ public struct PokemonCard: View {
             RoundedRectangle(cornerRadius: 20)
         .fill(
             LinearGradient(
-                colors: types.map { Color.pokemonType($0).opacity(0.8) },
+                colors: types.map { PokemonColors.color(for: $0).opacity(0.8) },
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
